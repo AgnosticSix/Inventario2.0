@@ -12,9 +12,9 @@ using MySql.Data.MySqlClient;
 
 namespace Inventario2._0
 {
-    public partial class Form1 : Form
+    public partial class Articulos : Form
     {
-        public Form1()
+        public Articulos()
         {
             InitializeComponent();
         }
@@ -37,13 +37,12 @@ namespace Inventario2._0
 
             if (this.OpenConnection() == true)
             {
-                mySqlDataAdapter = new MySqlDataAdapter("select * from composers", connection);
+                mySqlDataAdapter = new MySqlDataAdapter("select * from articulos", connection);
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
                 dataGridView1.DataSource = DS.Tables[0];
 
-                //close connection
-                this.CloseConnection();
+               
             }
         }
 
@@ -103,14 +102,45 @@ namespace Inventario2._0
             }
         }
 
-        private void exitbtn_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
+        
 
         private void Form1_FormClosing(object sender, FormClosingEventArgs e)
         {
+            //close connection
+            this.CloseConnection();
             Application.Exit();
+        }
+
+        private void salirToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //close connection
+            this.CloseConnection();
+            Application.Exit();
+        }
+
+        private void edificiosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Edificios edif = new Edificios();
+            edif.Show();
+
+        }
+
+        private void inventariosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Inventario inv = new Inventario();
+            inv.Show();
+        }
+
+        private void detallesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Detalle_Inventario det_inv = new Detalle_Inventario();
+            det_inv.Show();
+        }
+
+        private void salonesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Salones sal = new Salones();
+            sal.Show();
         }
     }
 }
