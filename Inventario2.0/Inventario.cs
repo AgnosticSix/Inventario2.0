@@ -27,7 +27,7 @@ namespace Inventario2._0
 
             if (db.openConnection())
             {
-                mySqlDataAdapter = db.getMySqlDataAdapter("select i.encargado as Encargado, i.fecha as Fecha, COUNT(di.id_articulo) as \"Articulos contados\", i.observaciones as Observaciones from detalle_inventario as di inner join inventarios as i on  di.id_inventario=i.id_inventario");
+                mySqlDataAdapter = db.getMySqlDataAdapter("select * from listar_inventarios");
                 DataSet DS = new DataSet();
                 mySqlDataAdapter.Fill(DS);
                 inventariosDGV.DataSource = DS.Tables[0];
@@ -62,6 +62,12 @@ namespace Inventario2._0
         {
             if (!db.closeConnection()) db.closeConnection();
             Application.Exit();
+        }
+
+        private void nuevoInventarioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Detalle_Inventario detalle_Inventario = new Detalle_Inventario();
+            detalle_Inventario.Show();
         }
     }
 }
