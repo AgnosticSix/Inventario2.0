@@ -15,9 +15,25 @@ namespace Inventario2._0
         private MySqlConnection mySqlConnection = null;
         private bool mySqlConnectionOpened = false;
 
+        //default credentials
+        private string server = "localhost";
+        private string database = "inventario";
+        private string user = "root";
+        private string password = "";
+
         public Database(string server, string database, string user, string pwsd)
         {
-            mySqlConnection = new MySqlConnection("SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + user + ";" + "PASSWORD=" + pwsd + ";");
+            this.initilize(server, database, user, pwsd);
+        }
+
+        public Database()
+        {
+            this.initilize(this.server, this.database, this.user, this.password);
+        }
+
+        private void initilize(string server, string database, string user, string pwsd)
+        {
+            mySqlConnection = new MySqlConnection("SERVER=" + server + ";" + "DATABASE=" + database + ";" + "UID=" + user + ";" + "PASSWORD=" + pwsd + "; Allow User Variables=True;");
         }
 
         public bool openConnection()
@@ -69,5 +85,37 @@ namespace Inventario2._0
                 return false;
             }
         }
+
+        public int executeNonQuery(string query)
+        {
+            try
+            {
+                MySqlCommand command = new MySqlCommand(query, this.mySqlConnection);
+                int rowsAffected = command.ExecuteNonQuery();
+                return rowsAffected;
+            }
+            catch(MySqlException e)
+            {
+                System.Console.WriteLine(e.ToString());
+                return -1;
+            }
+        }
+
+        public MySqlDataReader executeReader(string query)
+        {
+            try
+            {
+                MySqlCommand command = new MySqlCommand(query, this.mySqlConnection);
+                MySqlDataReader reader = command.ExecuteReader();
+                return reader;
+            }
+            catch(MySqlException e)
+            {
+                System.Console.WriteLine(e.ToString());
+                return null;
+            }
+        }
+
+
     }
 }
