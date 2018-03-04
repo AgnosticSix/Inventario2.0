@@ -92,6 +92,9 @@
     <EmbeddedResource Include="Articulos.resx">
       <DependentUpon>Articulos.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Detalle_Inventario.resx">
+      <DependentUpon>Detalle_Inventario.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Edificios.resx">
       <DependentUpon>Edificios.cs</DependentUpon>
     </EmbeddedResource>
