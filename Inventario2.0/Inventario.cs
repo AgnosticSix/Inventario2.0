@@ -21,6 +21,7 @@ namespace Inventario2._0
 
         private Database db = null;
         private MySqlDataAdapter mySqlDataAdapter, mySqlDataAdapter2;
+        DataSet DS = new DataSet();
 
         private void Inventario_Load(object sender, EventArgs e)
         {
@@ -31,7 +32,6 @@ namespace Inventario2._0
             {
                 mySqlDataAdapter = db.getMySqlDataAdapter("select * from listar_inventarios");
                 mySqlDataAdapter2 = db.getMySqlDataAdapter("select id_inventario from listar_inventarios");
-                DataSet DS = new DataSet();
                 DataSet DS2 = new DataSet();
                 mySqlDataAdapter.Fill(DS);
                 mySqlDataAdapter2.Fill(DS2);
@@ -42,6 +42,8 @@ namespace Inventario2._0
                 {
                     invBox.Items.Add(id_inv.ToString());
                 }
+
+                this.invBox.SelectedIndexChanged += new EventHandler(invBox_SelectedIndexChanged);
             }
         }
 
@@ -90,6 +92,15 @@ namespace Inventario2._0
             {
                 ToCsV(inventariosDGV, sfd.FileName);
             }
+        }
+
+        private void invBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            inventariosDGV.Rows.Clear();
+
+            mySqlDataAdapter = db.getMySqlDataAdapter("select * from listar_inventarios where id_inventario = " + invBox.SelectedIndex.ToString());
+            mySqlDataAdapter.Fill(DS);
+            inventariosDGV.DataSource = DS.Tables[0];
         }
 
         private void ToCsV(DataGridView dGV, string filename)
