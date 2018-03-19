@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Data;
+using System.IO;
+using System.Text;
 using System.Windows.Forms;
 using MySql.Data.MySqlClient;
 
@@ -18,7 +20,7 @@ namespace Inventario2._0
         private string password = "";
 
         private Database db = null;
-        private MySqlDataAdapter mySqlDataAdapter;
+        private MySqlDataAdapter mySqlDataAdapter, mySqlDataAdapter2;
 
         private void Inventario_Load(object sender, EventArgs e)
         {
@@ -28,9 +30,18 @@ namespace Inventario2._0
             if (db.openConnection())
             {
                 mySqlDataAdapter = db.getMySqlDataAdapter("select * from listar_inventarios");
+                mySqlDataAdapter2 = db.getMySqlDataAdapter("select id_inventario from listar_inventarios");
                 DataSet DS = new DataSet();
+                DataSet DS2 = new DataSet();
                 mySqlDataAdapter.Fill(DS);
+                mySqlDataAdapter2.Fill(DS2);
                 inventariosDGV.DataSource = DS.Tables[0];
+
+                invBox.Items.Clear();
+                foreach (DataRow id_inv in DS2.Tables[0].Rows)
+                {
+                    invBox.Items.Add(id_inv.ToString());
+                }
             }
         }
 
@@ -63,11 +74,49 @@ namespace Inventario2._0
             if (!db.closeConnection()) db.closeConnection();
             Application.Exit();
         }
-
+        
         private void nuevoInventarioToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Detalle_Inventario detalle_Inventario = new Detalle_Inventario();
             detalle_Inventario.Show();
+        }
+
+        private void exportarAExcelToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            SaveFileDialog sfd = new SaveFileDialog();
+            sfd.Filter = "Excel Documents (*.xls)|*.xls";
+            sfd.FileName = "export.xls";
+            if (sfd.ShowDialog() == DialogResult.OK)
+            {
+                ToCsV(inventariosDGV, sfd.FileName);
+            }
+        }
+
+        private void ToCsV(DataGridView dGV, string filename)
+        {
+            string stOutput = "";
+            string sHeaders = "";
+
+            for (int j = 0; j < dGV.Columns.Count; j++)
+                sHeaders = sHeaders.ToString() + Convert.ToString(dGV.Columns[j].HeaderText) + "\t";
+            stOutput += sHeaders + "\r\n";
+            
+            for (int i = 0; i < dGV.RowCount - 1; i++)
+            {
+                string stLine = "";
+                for (int j = 0; j < dGV.Rows[i].Cells.Count; j++)
+                    stLine = stLine.ToString() + Convert.ToString(dGV.Rows[i].Cells[j].Value) + "\t";
+                stOutput += stLine + "\r\n";
+            }
+
+            Encoding utf16 = Encoding.GetEncoding(1254);
+            byte[] output = utf16.GetBytes(stOutput);
+            FileStream fs = new FileStream(filename, FileMode.Create);
+            BinaryWriter bw = new BinaryWriter(fs);
+            bw.Write(output, 0, output.Length);
+            bw.Flush();
+            bw.Close();
+            fs.Close();
         }
     }
 }

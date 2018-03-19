@@ -292,7 +292,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtEncargado);
             this.Controls.Add(this.dataGridViewDetalle);
+            this.MaximumSize = new System.Drawing.Size(833, 772);
+            this.MinimumSize = new System.Drawing.Size(833, 726);
             this.Name = "Detalle_Inventario";
+            this.ShowIcon = false;
             this.Text = "Detalle_Inventario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Detalle_Inventario_FormClosing);
             this.Load += new System.EventHandler(this.Detalle_Inventario_Load);

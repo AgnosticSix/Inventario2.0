@@ -29,6 +29,18 @@
         private void InitializeComponent()
         {
             this.inventariosDGV = new System.Windows.Forms.DataGridView();
+            this.id_inventario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_edificio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codSalon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edificio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diferentes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_actualizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -42,18 +54,8 @@
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtSeleccionado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.id_inventario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_edificio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codSalon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edificio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diferentes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_actualizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.invBox = new System.Windows.Forms.ComboBox();
+            this.exportarAExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.inventariosDGV)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -86,115 +88,6 @@
             this.inventariosDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inventariosDGV.Size = new System.Drawing.Size(1244, 468);
             this.inventariosDGV.TabIndex = 0;
-            // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.herramientasToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(1268, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            // 
-            // archivoToolStripMenuItem
-            // 
-            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.salirToolStripMenuItem});
-            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
-            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
-            this.archivoToolStripMenuItem.Text = "Archivo";
-            // 
-            // salirToolStripMenuItem
-            // 
-            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
-            this.salirToolStripMenuItem.Size = new System.Drawing.Size(96, 22);
-            this.salirToolStripMenuItem.Text = "Salir";
-            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
-            // 
-            // herramientasToolStripMenuItem
-            // 
-            this.herramientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.edificiosToolStripMenuItem,
-            this.salonesToolStripMenuItem,
-            this.articulosToolStripMenuItem,
-            this.nuevoInventarioToolStripMenuItem});
-            this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
-            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
-            this.herramientasToolStripMenuItem.Text = "Administrar";
-            // 
-            // edificiosToolStripMenuItem
-            // 
-            this.edificiosToolStripMenuItem.Name = "edificiosToolStripMenuItem";
-            this.edificiosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.edificiosToolStripMenuItem.Text = "Edificios";
-            this.edificiosToolStripMenuItem.Click += new System.EventHandler(this.edificiosToolStripMenuItem_Click);
-            // 
-            // salonesToolStripMenuItem
-            // 
-            this.salonesToolStripMenuItem.Name = "salonesToolStripMenuItem";
-            this.salonesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.salonesToolStripMenuItem.Text = "Salones";
-            this.salonesToolStripMenuItem.Click += new System.EventHandler(this.salonesToolStripMenuItem_Click);
-            // 
-            // articulosToolStripMenuItem
-            // 
-            this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
-            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.articulosToolStripMenuItem.Text = "Articulos";
-            this.articulosToolStripMenuItem.Click += new System.EventHandler(this.articulosToolStripMenuItem_Click);
-            // 
-            // nuevoInventarioToolStripMenuItem
-            // 
-            this.nuevoInventarioToolStripMenuItem.Name = "nuevoInventarioToolStripMenuItem";
-            this.nuevoInventarioToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
-            this.nuevoInventarioToolStripMenuItem.Text = "Nuevo inventario";
-            this.nuevoInventarioToolStripMenuItem.Click += new System.EventHandler(this.nuevoInventarioToolStripMenuItem_Click);
-            // 
-            // btnEliminar
-            // 
-            this.btnEliminar.Location = new System.Drawing.Point(595, 565);
-            this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(107, 23);
-            this.btnEliminar.TabIndex = 4;
-            this.btnEliminar.Text = "Eliminar";
-            this.btnEliminar.UseVisualStyleBackColor = true;
-            // 
-            // btnDetalle
-            // 
-            this.btnDetalle.Location = new System.Drawing.Point(329, 565);
-            this.btnDetalle.Name = "btnDetalle";
-            this.btnDetalle.Size = new System.Drawing.Size(110, 23);
-            this.btnDetalle.TabIndex = 3;
-            this.btnDetalle.Text = "Ver detalle";
-            this.btnDetalle.UseVisualStyleBackColor = true;
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(462, 565);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(110, 23);
-            this.btnCancelar.TabIndex = 5;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            // 
-            // txtSeleccionado
-            // 
-            this.txtSeleccionado.Location = new System.Drawing.Point(12, 568);
-            this.txtSeleccionado.Name = "txtSeleccionado";
-            this.txtSeleccionado.ReadOnly = true;
-            this.txtSeleccionado.Size = new System.Drawing.Size(274, 20);
-            this.txtSeleccionado.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(12, 543);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(72, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Seleccionado";
             // 
             // id_inventario
             // 
@@ -297,12 +190,138 @@
             this.fecha_actualizado.ReadOnly = true;
             this.fecha_actualizado.Width = 120;
             // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.archivoToolStripMenuItem,
+            this.herramientasToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(1268, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // archivoToolStripMenuItem
+            // 
+            this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exportarAExcelToolStripMenuItem,
+            this.salirToolStripMenuItem});
+            this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
+            this.archivoToolStripMenuItem.Size = new System.Drawing.Size(60, 20);
+            this.archivoToolStripMenuItem.Text = "Archivo";
+            // 
+            // salirToolStripMenuItem
+            // 
+            this.salirToolStripMenuItem.Name = "salirToolStripMenuItem";
+            this.salirToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.salirToolStripMenuItem.Text = "Salir";
+            this.salirToolStripMenuItem.Click += new System.EventHandler(this.salirToolStripMenuItem_Click);
+            // 
+            // herramientasToolStripMenuItem
+            // 
+            this.herramientasToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.edificiosToolStripMenuItem,
+            this.salonesToolStripMenuItem,
+            this.articulosToolStripMenuItem,
+            this.nuevoInventarioToolStripMenuItem});
+            this.herramientasToolStripMenuItem.Name = "herramientasToolStripMenuItem";
+            this.herramientasToolStripMenuItem.Size = new System.Drawing.Size(81, 20);
+            this.herramientasToolStripMenuItem.Text = "Administrar";
+            // 
+            // edificiosToolStripMenuItem
+            // 
+            this.edificiosToolStripMenuItem.Name = "edificiosToolStripMenuItem";
+            this.edificiosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.edificiosToolStripMenuItem.Text = "Edificios";
+            this.edificiosToolStripMenuItem.Click += new System.EventHandler(this.edificiosToolStripMenuItem_Click);
+            // 
+            // salonesToolStripMenuItem
+            // 
+            this.salonesToolStripMenuItem.Name = "salonesToolStripMenuItem";
+            this.salonesToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.salonesToolStripMenuItem.Text = "Salones";
+            this.salonesToolStripMenuItem.Click += new System.EventHandler(this.salonesToolStripMenuItem_Click);
+            // 
+            // articulosToolStripMenuItem
+            // 
+            this.articulosToolStripMenuItem.Name = "articulosToolStripMenuItem";
+            this.articulosToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.articulosToolStripMenuItem.Text = "Articulos";
+            this.articulosToolStripMenuItem.Click += new System.EventHandler(this.articulosToolStripMenuItem_Click);
+            // 
+            // nuevoInventarioToolStripMenuItem
+            // 
+            this.nuevoInventarioToolStripMenuItem.Name = "nuevoInventarioToolStripMenuItem";
+            this.nuevoInventarioToolStripMenuItem.Size = new System.Drawing.Size(165, 22);
+            this.nuevoInventarioToolStripMenuItem.Text = "Nuevo inventario";
+            this.nuevoInventarioToolStripMenuItem.Click += new System.EventHandler(this.nuevoInventarioToolStripMenuItem_Click);
+            // 
+            // btnEliminar
+            // 
+            this.btnEliminar.Location = new System.Drawing.Point(595, 565);
+            this.btnEliminar.Name = "btnEliminar";
+            this.btnEliminar.Size = new System.Drawing.Size(107, 23);
+            this.btnEliminar.TabIndex = 4;
+            this.btnEliminar.Text = "Eliminar";
+            this.btnEliminar.UseVisualStyleBackColor = true;
+            // 
+            // btnDetalle
+            // 
+            this.btnDetalle.Location = new System.Drawing.Point(329, 565);
+            this.btnDetalle.Name = "btnDetalle";
+            this.btnDetalle.Size = new System.Drawing.Size(110, 23);
+            this.btnDetalle.TabIndex = 3;
+            this.btnDetalle.Text = "Ver detalle";
+            this.btnDetalle.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(462, 565);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(110, 23);
+            this.btnCancelar.TabIndex = 5;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            // 
+            // txtSeleccionado
+            // 
+            this.txtSeleccionado.Location = new System.Drawing.Point(12, 568);
+            this.txtSeleccionado.Name = "txtSeleccionado";
+            this.txtSeleccionado.ReadOnly = true;
+            this.txtSeleccionado.Size = new System.Drawing.Size(274, 20);
+            this.txtSeleccionado.TabIndex = 6;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(12, 543);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(72, 13);
+            this.label1.TabIndex = 7;
+            this.label1.Text = "Seleccionado";
+            // 
+            // invBox
+            // 
+            this.invBox.FormattingEnabled = true;
+            this.invBox.Location = new System.Drawing.Point(735, 565);
+            this.invBox.Name = "invBox";
+            this.invBox.Size = new System.Drawing.Size(121, 21);
+            this.invBox.TabIndex = 8;
+            // 
+            // exportarAExcelToolStripMenuItem
+            // 
+            this.exportarAExcelToolStripMenuItem.Name = "exportarAExcelToolStripMenuItem";
+            this.exportarAExcelToolStripMenuItem.Size = new System.Drawing.Size(155, 22);
+            this.exportarAExcelToolStripMenuItem.Text = "Exportar a Excel";
+            this.exportarAExcelToolStripMenuItem.Click += new System.EventHandler(this.exportarAExcelToolStripMenuItem_Click);
+            // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1268, 604);
+            this.Controls.Add(this.invBox);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtSeleccionado);
             this.Controls.Add(this.btnCancelar);
@@ -311,7 +330,10 @@
             this.Controls.Add(this.inventariosDGV);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximumSize = new System.Drawing.Size(1284, 643);
+            this.MinimumSize = new System.Drawing.Size(1284, 643);
             this.Name = "Inventario";
+            this.ShowIcon = false;
             this.Text = "Inventario";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Inventario_FormClosing);
             this.Load += new System.EventHandler(this.Inventario_Load);
@@ -351,5 +373,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn observaciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_creacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_actualizado;
+        private System.Windows.Forms.ComboBox invBox;
+        private System.Windows.Forms.ToolStripMenuItem exportarAExcelToolStripMenuItem;
     }
 }

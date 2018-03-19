@@ -29,6 +29,12 @@
         private void InitializeComponent()
         {
             this.dataGridViewSalones = new System.Windows.Forms.DataGridView();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edificio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_edificio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,12 +46,6 @@
             this.btnGuardar = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
             this.comboEdificios = new System.Windows.Forms.ComboBox();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codigo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edificio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_edificio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -71,6 +71,57 @@
             this.dataGridViewSalones.Size = new System.Drawing.Size(956, 581);
             this.dataGridViewSalones.TabIndex = 0;
             this.dataGridViewSalones.DoubleClick += new System.EventHandler(this.dataGridViewSalones_DoubleClick);
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 200;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 300;
+            // 
+            // codigo
+            // 
+            this.codigo.DataPropertyName = "codigo";
+            this.codigo.HeaderText = "Código";
+            this.codigo.MinimumWidth = 80;
+            this.codigo.Name = "codigo";
+            this.codigo.ReadOnly = true;
+            // 
+            // edificio
+            // 
+            this.edificio.DataPropertyName = "edificio";
+            this.edificio.HeaderText = "Edificio";
+            this.edificio.MinimumWidth = 150;
+            this.edificio.Name = "edificio";
+            this.edificio.ReadOnly = true;
+            this.edificio.Width = 300;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.MinimumWidth = 400;
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 650;
+            // 
+            // id_edificio
+            // 
+            this.id_edificio.DataPropertyName = "id_edificio";
+            this.id_edificio.HeaderText = "id_edificio";
+            this.id_edificio.Name = "id_edificio";
+            this.id_edificio.ReadOnly = true;
+            this.id_edificio.Visible = false;
+            // 
+            // id_salon
+            // 
+            this.id_salon.DataPropertyName = "id_salon";
+            this.id_salon.HeaderText = "id_salon";
+            this.id_salon.Name = "id_salon";
+            this.id_salon.ReadOnly = true;
+            this.id_salon.Visible = false;
             // 
             // txtNombre
             // 
@@ -170,57 +221,6 @@
             this.comboEdificios.Size = new System.Drawing.Size(297, 21);
             this.comboEdificios.TabIndex = 13;
             // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 200;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 300;
-            // 
-            // codigo
-            // 
-            this.codigo.DataPropertyName = "codigo";
-            this.codigo.HeaderText = "Código";
-            this.codigo.MinimumWidth = 80;
-            this.codigo.Name = "codigo";
-            this.codigo.ReadOnly = true;
-            // 
-            // edificio
-            // 
-            this.edificio.DataPropertyName = "edificio";
-            this.edificio.HeaderText = "Edificio";
-            this.edificio.MinimumWidth = 150;
-            this.edificio.Name = "edificio";
-            this.edificio.ReadOnly = true;
-            this.edificio.Width = 300;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.MinimumWidth = 400;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 650;
-            // 
-            // id_edificio
-            // 
-            this.id_edificio.DataPropertyName = "id_edificio";
-            this.id_edificio.HeaderText = "id_edificio";
-            this.id_edificio.Name = "id_edificio";
-            this.id_edificio.ReadOnly = true;
-            this.id_edificio.Visible = false;
-            // 
-            // id_salon
-            // 
-            this.id_salon.DataPropertyName = "id_salon";
-            this.id_salon.HeaderText = "id_salon";
-            this.id_salon.Name = "id_salon";
-            this.id_salon.ReadOnly = true;
-            this.id_salon.Visible = false;
-            // 
             // Salones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -239,7 +239,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.dataGridViewSalones);
+            this.MaximumSize = new System.Drawing.Size(1337, 644);
+            this.MinimumSize = new System.Drawing.Size(1337, 644);
             this.Name = "Salones";
+            this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Salones";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Salones_FormClosing);

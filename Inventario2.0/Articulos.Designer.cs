@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.dataGridViewSalones = new System.Windows.Forms.DataGridView();
+            this.id_articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.txtDescripcion = new System.Windows.Forms.TextBox();
             this.btnEliminar = new System.Windows.Forms.Button();
@@ -36,9 +39,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
-            this.id_articulo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSalones)).BeginInit();
             this.SuspendLayout();
             // 
@@ -61,6 +61,32 @@
             this.dataGridViewSalones.Size = new System.Drawing.Size(845, 510);
             this.dataGridViewSalones.TabIndex = 0;
             this.dataGridViewSalones.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.dataGridViewSalones_MouseDoubleClick);
+            // 
+            // id_articulo
+            // 
+            this.id_articulo.DataPropertyName = "id_articulo";
+            this.id_articulo.HeaderText = "id_articulo";
+            this.id_articulo.Name = "id_articulo";
+            this.id_articulo.ReadOnly = true;
+            this.id_articulo.Visible = false;
+            // 
+            // nombre
+            // 
+            this.nombre.DataPropertyName = "nombre";
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.MinimumWidth = 200;
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 300;
+            // 
+            // descripcion
+            // 
+            this.descripcion.DataPropertyName = "descripcion";
+            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.MinimumWidth = 350;
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 650;
             // 
             // btnCancelar
             // 
@@ -126,32 +152,6 @@
             this.txtNombre.Size = new System.Drawing.Size(297, 34);
             this.txtNombre.TabIndex = 9;
             // 
-            // id_articulo
-            // 
-            this.id_articulo.DataPropertyName = "id_articulo";
-            this.id_articulo.HeaderText = "id_articulo";
-            this.id_articulo.Name = "id_articulo";
-            this.id_articulo.ReadOnly = true;
-            this.id_articulo.Visible = false;
-            // 
-            // nombre
-            // 
-            this.nombre.DataPropertyName = "nombre";
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.MinimumWidth = 200;
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            this.nombre.Width = 300;
-            // 
-            // descripcion
-            // 
-            this.descripcion.DataPropertyName = "descripcion";
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.MinimumWidth = 350;
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            this.descripcion.Width = 650;
-            // 
             // Articulos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -165,6 +165,8 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.dataGridViewSalones);
+            this.MaximumSize = new System.Drawing.Size(1228, 573);
+            this.MinimumSize = new System.Drawing.Size(1228, 573);
             this.Name = "Articulos";
             this.ShowIcon = false;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
