@@ -27,13 +27,13 @@ namespace Inventario2._0
         {
             InitializeComponent();
             this.id_inventario_selected = id_inventario_selected;
-            db = new Database();
+            /*db = new Database();
 
 
             if (db.openConnection())
             {
                 this.fillTable();
-            }
+            }*/
             
         }
 
@@ -115,7 +115,7 @@ namespace Inventario2._0
             //añade cada id_articulo existente a un array lista para que no se pueda agregar dos veces
             foreach (DataGridViewRow row in this.dataGridViewDetalle.Rows)
             {
-                this.idsArticulo.Add(Int32.Parse(row.Cells[0].Value.ToString()));
+                //this.idsArticulo.Add(Int32.Parse(row.Cells[0].Value.ToString()));
             }
         }
 

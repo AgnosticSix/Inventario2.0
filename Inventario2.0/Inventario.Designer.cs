@@ -29,18 +29,6 @@
         private void InitializeComponent()
         {
             this.inventariosDGV = new System.Windows.Forms.DataGridView();
-            this.id_inventario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_edificio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.codSalon = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.edificio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diferentes = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fecha_actualizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exportarAExcelToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -56,6 +44,18 @@
             this.txtSeleccionado = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.invBox = new System.Windows.Forms.ComboBox();
+            this.id_inventario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_edificio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.salon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codSalon = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.edificio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.encargado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totales = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diferentes = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observaciones = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_creacion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha_actualizado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.inventariosDGV)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
@@ -88,107 +88,7 @@
             this.inventariosDGV.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.inventariosDGV.Size = new System.Drawing.Size(1244, 468);
             this.inventariosDGV.TabIndex = 0;
-            // 
-            // id_inventario
-            // 
-            this.id_inventario.DataPropertyName = "id_inventario";
-            this.id_inventario.HeaderText = "id_inventario";
-            this.id_inventario.Name = "id_inventario";
-            this.id_inventario.ReadOnly = true;
-            this.id_inventario.Visible = false;
-            // 
-            // id_edificio
-            // 
-            this.id_edificio.DataPropertyName = "id_edificio";
-            this.id_edificio.HeaderText = "id_edificio";
-            this.id_edificio.Name = "id_edificio";
-            this.id_edificio.ReadOnly = true;
-            this.id_edificio.Visible = false;
-            // 
-            // id_salon
-            // 
-            this.id_salon.DataPropertyName = "id_salon";
-            this.id_salon.HeaderText = "id_salon";
-            this.id_salon.Name = "id_salon";
-            this.id_salon.ReadOnly = true;
-            this.id_salon.Visible = false;
-            // 
-            // salon
-            // 
-            this.salon.DataPropertyName = "salon";
-            this.salon.HeaderText = "Salón";
-            this.salon.MinimumWidth = 50;
-            this.salon.Name = "salon";
-            this.salon.ReadOnly = true;
-            // 
-            // codSalon
-            // 
-            this.codSalon.DataPropertyName = "codSalon";
-            this.codSalon.HeaderText = "Código Salon";
-            this.codSalon.MinimumWidth = 50;
-            this.codSalon.Name = "codSalon";
-            this.codSalon.ReadOnly = true;
-            // 
-            // edificio
-            // 
-            this.edificio.DataPropertyName = "edificio";
-            this.edificio.HeaderText = "Edificio";
-            this.edificio.MinimumWidth = 80;
-            this.edificio.Name = "edificio";
-            this.edificio.ReadOnly = true;
-            this.edificio.Width = 180;
-            // 
-            // encargado
-            // 
-            this.encargado.DataPropertyName = "encargado";
-            this.encargado.HeaderText = "Encargado";
-            this.encargado.MinimumWidth = 50;
-            this.encargado.Name = "encargado";
-            this.encargado.ReadOnly = true;
-            this.encargado.Width = 180;
-            // 
-            // totales
-            // 
-            this.totales.DataPropertyName = "totales";
-            this.totales.HeaderText = "Art. Totales";
-            this.totales.MinimumWidth = 50;
-            this.totales.Name = "totales";
-            this.totales.ReadOnly = true;
-            // 
-            // diferentes
-            // 
-            this.diferentes.DataPropertyName = "diferentes";
-            this.diferentes.HeaderText = "Art. Diferentes";
-            this.diferentes.MinimumWidth = 50;
-            this.diferentes.Name = "diferentes";
-            this.diferentes.ReadOnly = true;
-            // 
-            // observaciones
-            // 
-            this.observaciones.DataPropertyName = "observaciones";
-            this.observaciones.HeaderText = "Observaciones";
-            this.observaciones.MinimumWidth = 200;
-            this.observaciones.Name = "observaciones";
-            this.observaciones.ReadOnly = true;
-            this.observaciones.Width = 500;
-            // 
-            // fecha_creacion
-            // 
-            this.fecha_creacion.DataPropertyName = "fecha_creacion";
-            this.fecha_creacion.HeaderText = "Creado";
-            this.fecha_creacion.MinimumWidth = 50;
-            this.fecha_creacion.Name = "fecha_creacion";
-            this.fecha_creacion.ReadOnly = true;
-            this.fecha_creacion.Width = 120;
-            // 
-            // fecha_actualizado
-            // 
-            this.fecha_actualizado.DataPropertyName = "fecha_actualizado";
-            this.fecha_actualizado.HeaderText = "Actualizado";
-            this.fecha_actualizado.MinimumWidth = 50;
-            this.fecha_actualizado.Name = "fecha_actualizado";
-            this.fecha_actualizado.ReadOnly = true;
-            this.fecha_actualizado.Width = 120;
+            this.inventariosDGV.DoubleClick += new System.EventHandler(this.inventariosDGV_DoubleClick);
             // 
             // menuStrip1
             // 
@@ -316,6 +216,106 @@
             this.invBox.TabIndex = 8;
             this.invBox.SelectedIndexChanged += new System.EventHandler(this.invBox_SelectedIndexChanged);
             // 
+            // id_inventario
+            // 
+            this.id_inventario.DataPropertyName = "id_inventario";
+            this.id_inventario.HeaderText = "id_inventario";
+            this.id_inventario.Name = "id_inventario";
+            this.id_inventario.ReadOnly = true;
+            // 
+            // id_edificio
+            // 
+            this.id_edificio.DataPropertyName = "id_edificio";
+            this.id_edificio.HeaderText = "id_edificio";
+            this.id_edificio.Name = "id_edificio";
+            this.id_edificio.ReadOnly = true;
+            this.id_edificio.Visible = false;
+            // 
+            // id_salon
+            // 
+            this.id_salon.DataPropertyName = "id_salon";
+            this.id_salon.HeaderText = "id_salon";
+            this.id_salon.Name = "id_salon";
+            this.id_salon.ReadOnly = true;
+            this.id_salon.Visible = false;
+            // 
+            // salon
+            // 
+            this.salon.DataPropertyName = "salon";
+            this.salon.HeaderText = "Salón";
+            this.salon.MinimumWidth = 50;
+            this.salon.Name = "salon";
+            this.salon.ReadOnly = true;
+            // 
+            // codSalon
+            // 
+            this.codSalon.DataPropertyName = "codSalon";
+            this.codSalon.HeaderText = "Código Salon";
+            this.codSalon.MinimumWidth = 50;
+            this.codSalon.Name = "codSalon";
+            this.codSalon.ReadOnly = true;
+            // 
+            // edificio
+            // 
+            this.edificio.DataPropertyName = "edificio";
+            this.edificio.HeaderText = "Edificio";
+            this.edificio.MinimumWidth = 80;
+            this.edificio.Name = "edificio";
+            this.edificio.ReadOnly = true;
+            this.edificio.Width = 180;
+            // 
+            // encargado
+            // 
+            this.encargado.DataPropertyName = "encargado";
+            this.encargado.HeaderText = "Encargado";
+            this.encargado.MinimumWidth = 50;
+            this.encargado.Name = "encargado";
+            this.encargado.ReadOnly = true;
+            this.encargado.Width = 180;
+            // 
+            // totales
+            // 
+            this.totales.DataPropertyName = "totales";
+            this.totales.HeaderText = "Art. Totales";
+            this.totales.MinimumWidth = 50;
+            this.totales.Name = "totales";
+            this.totales.ReadOnly = true;
+            // 
+            // diferentes
+            // 
+            this.diferentes.DataPropertyName = "diferentes";
+            this.diferentes.HeaderText = "Art. Diferentes";
+            this.diferentes.MinimumWidth = 50;
+            this.diferentes.Name = "diferentes";
+            this.diferentes.ReadOnly = true;
+            // 
+            // observaciones
+            // 
+            this.observaciones.DataPropertyName = "observaciones";
+            this.observaciones.HeaderText = "Observaciones";
+            this.observaciones.MinimumWidth = 200;
+            this.observaciones.Name = "observaciones";
+            this.observaciones.ReadOnly = true;
+            this.observaciones.Width = 500;
+            // 
+            // fecha_creacion
+            // 
+            this.fecha_creacion.DataPropertyName = "fecha_creacion";
+            this.fecha_creacion.HeaderText = "Creado";
+            this.fecha_creacion.MinimumWidth = 50;
+            this.fecha_creacion.Name = "fecha_creacion";
+            this.fecha_creacion.ReadOnly = true;
+            this.fecha_creacion.Width = 120;
+            // 
+            // fecha_actualizado
+            // 
+            this.fecha_actualizado.DataPropertyName = "fecha_actualizado";
+            this.fecha_actualizado.HeaderText = "Actualizado";
+            this.fecha_actualizado.MinimumWidth = 50;
+            this.fecha_actualizado.Name = "fecha_actualizado";
+            this.fecha_actualizado.ReadOnly = true;
+            this.fecha_actualizado.Width = 120;
+            // 
             // Inventario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -362,6 +362,8 @@
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.TextBox txtSeleccionado;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ComboBox invBox;
+        private System.Windows.Forms.ToolStripMenuItem exportarAExcelToolStripMenuItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_inventario;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_edificio;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_salon;
@@ -374,7 +376,5 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn observaciones;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_creacion;
         private System.Windows.Forms.DataGridViewTextBoxColumn fecha_actualizado;
-        private System.Windows.Forms.ComboBox invBox;
-        private System.Windows.Forms.ToolStripMenuItem exportarAExcelToolStripMenuItem;
     }
 }

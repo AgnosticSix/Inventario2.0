@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Data;
 using System.IO;
 using System.Text;
@@ -23,6 +24,12 @@ namespace Inventario2._0
         private MySqlDataAdapter mySqlDataAdapter, mySqlDataAdapter2;
         DataSet DS = new DataSet();
 
+        private ArrayList idsArticulo = new ArrayList();
+        private bool editing = false;
+        private int id_articulo_selected = -1;
+        private int id_inventario_selected = -1;
+        private DataGridViewRow selectedRow = null;
+
         private void Inventario_Load(object sender, EventArgs e)
         {
             db = new Database(server, database, uid, password);
@@ -37,11 +44,7 @@ namespace Inventario2._0
                 mySqlDataAdapter2.Fill(DS2);
                 inventariosDGV.DataSource = DS.Tables[0];
 
-                invBox.Items.Clear();
-                foreach (DataRow id_inv in DS2.Tables[0].Rows)
-                {
-                    invBox.Items.Add(id_inv.ToString());
-                }
+                //invBox.Items.Clear();
 
                 this.invBox.SelectedIndexChanged += new EventHandler(invBox_SelectedIndexChanged);
             }
@@ -96,11 +99,29 @@ namespace Inventario2._0
 
         private void invBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            inventariosDGV.Rows.Clear();
+            
 
             mySqlDataAdapter = db.getMySqlDataAdapter("select * from listar_inventarios where id_inventario = " + invBox.SelectedIndex.ToString());
             mySqlDataAdapter.Fill(DS);
             inventariosDGV.DataSource = DS.Tables[0];
+        }
+
+        private void getRowFields()
+        {
+            //extrae los datos de la(s) fila seleccionada 
+            DataGridViewSelectedRowCollection rows = this.inventariosDGV.SelectedRows;
+            foreach (DataGridViewRow row in rows)
+            {
+                this.id_inventario_selected = Int32.Parse(row.Cells[5].Value.ToString());
+                this.selectedRow = row;     //permitira borrar la fila 
+            }
+        }
+
+        private void inventariosDGV_DoubleClick(object sender, EventArgs e)
+        {
+            this.getRowFields();
+            Detalle_Inventario da = new Detalle_Inventario(this.id_inventario_selected);
+            da.Show();
         }
 
         private void ToCsV(DataGridView dGV, string filename)
